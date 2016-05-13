@@ -1,5 +1,5 @@
 # Stylometrics
-PHP class for Lexical Richness metics (Useful as features for various NLP tasks)
+PHP class for Lexical Richness metrics (Useful as features for various NLP tasks)
 
 Based on:
 
