@@ -2,14 +2,6 @@
 /**
  * Stylometrics: Word-based Feature Class
  *
- * ---------------------------------------------------------------------
- * Copyright (c) 2016 Evgeny A. Stepanov <stepanov.evgeny.a@gmail.com>
- * Copyright (c) 2016 University of Trento - SIS Lab <sislab@unitn.it>
- *
- * For non-commercial and research purposes the code is released under
- * the LGPL License v. 3.0. For commercial use, please contact us.
- * ---------------------------------------------------------------------
- *
  * Measures of Lexical Richness
  *
  * N      -- token count (text length in words)
@@ -53,6 +45,13 @@
  *  21. Simpson's D  = sum(V(i,N) * (V(i,N)/N) * (V(i,N) - 1)/(N - 2))
  *  22. Entropy      = V(i,N) * (-log((V(i,N)/N))^s * (V(i,N)/N)^t;
  *                     s = t = 1
+ *
+ * ---------------------------------------------------------------------
+ * Copyright (c) 2016 Evgeny A. Stepanov <stepanov.evgeny.a@gmail.com>
+ * Copyright (c) 2016 University of Trento - SIS Lab <sislab@unitn.it>
+ *
+ * For non-commercial and research purposes the code is released under
+ * the LGPL v3.0. For commercial use, please contact us.
  * ---------------------------------------------------------------------
  */
 class LexicalRichness {
