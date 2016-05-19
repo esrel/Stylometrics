@@ -5,22 +5,11 @@
  * Class to extract character features from a document
  *
  * ---------------------------------------------------------------------
- * Copyright 2016 Evgeny A. Stepanov <stepanov.evgeny.a@gmail.com>
+ * Copyright (c) 2016 Evgeny A. Stepanov <stepanov.evgeny.a@gmail.com>
+ * Copyright (c) 2016 University of Trento - SIS Lab <sislab@unitn.it>
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
- * MA 02110-1301, USA.
+ * For non-commercial and research purposes the code is released under
+ * the LGPL License v. 3.0. For commercial use, please contact us.
  * ---------------------------------------------------------------------
  *
  * Optionally takes character class definition file
@@ -335,18 +324,25 @@ class CharacterFeatures {
 		return mb_strlen($str, $this->encoding);
 	}
 }
-// Test Case:
+/*======================================================================
+    Example Usage
+======================================================================*/
 /*
 error_reporting(E_ALL);
 ini_set('memory_limit', -1);
 ini_set('display_errors', 1);
 
-$args = getopt('f:c:'); // document as a file & character definitions
-$doc  = "Pierre Vinken , 61 years old , will join the board as a nonexecutive director Nov. 29 .
-Mr . Vinken is chairman of Elsevier N.V. , the Dutch publishing group .";
+$args = getopt('f:c:'); // document as a file
 
-$doc = (isset($args['f'])) ? file_get_contents($args['f']) : $doc;
-$chs = $args['c'];
+// example document
+$doc  = 'Pierre Vinken , 61 years old , ';
+$doc .= 'will join the board as a nonexecutive director Nov. 29 .';
+$doc .= "\n";
+$doc .= 'Mr . Vinken is chairman of Elsevier N.V. , ';
+$doc .= 'the Dutch publishing group .';
+
+$doc  = (isset($args['f'])) ? file_get_contents($args['f']) : $doc;
+$chs  = $args['c'];
 
 $CF = new CharacterFeatures($chs);
 //$CF = new CharacterFeatures();
