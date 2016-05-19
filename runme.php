@@ -37,6 +37,7 @@ else {
 	$CF = new CharacterFeatures();
 }
 
+//----------------------------------------------------------------------
 $str    = file_get_contents($args['f']);
 // Lexical Richness metric features
 $lr_arr = $LR->getDocMetrics($str);
@@ -45,6 +46,10 @@ $ch_arr = $CF->getDocCharFeatures($str);
 $out    = array_merge($lr_arr, $ch_arr);
 
 echo implode(',', array_map('ppnum', $out)) . "\n";
+
+//----------------------------------------------------------------------
+// Functions
+//----------------------------------------------------------------------
 
 /**
  * Pretty-Print numbers w.r.t. precision
